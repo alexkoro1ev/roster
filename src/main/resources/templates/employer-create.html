@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый сотрудник</title>
+</head>
+<body>
+<form action="#" th:action="@{/employer-create}" th:object="${employer}" method="post">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Фамилия">
+    <label for="firstName">Имя</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="Имя">
+    <label for="parentName">Отчество</label>
+    <input type="text" th:field="*{parentName}" id="parentName" placeholder="Отчество">
+
+    <!-- Чек на работоспособность -->
+    <label for="isCurrent">Работает</label>
+    <select th:field="*{contract.isCurrent}" id="isCurrent" name="isCurrent">
+        <option th:value="1">да</option>
+        <option th:value="0">нет</option>
+    </select>
+
+    <!-- Чек даты
+    <label for="birthdate">Дата рождения</label>
+    <input type="date" th:field="*{birthdate}" id="birthdate" placeholder="Last Name">
+    -->
+    <!--
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    -->
+    <input type="submit" value="Create User">
+
+</form>
+</body>
+</html>

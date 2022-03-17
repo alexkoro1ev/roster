@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Реестр сотрудников</title>
+</head>
+<body>
+<div th:switch="${employers}">
+    <h2 th:case="null">Сотрудников не найдено!</h2>
+    <div th:case="*">
+        <h2>Реестр сотрудников</h2>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>ID</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Работает</th>
+                <!--
+                <th>Дата рождения</th>
+
+
+                <th>Пол</th>
+                <th>Специальность</th>
+                <th>Полных лет</th>
+                <th>Серия и № паспорта</th>
+                <th>Кем выдан</th>
+                <th>Когда выдан</th>
+                <th>ИНН</th>
+                <th>СНИЛС</th>
+                <th>Область</th>
+                <th>Район</th>
+                <th>Город</th>
+                <th>Улица</th>
+                <th>Дом</th>
+                <th>Квартира</th>
+                <th>Телефон</th>
+                <th>Дата приема</th>
+                <th>Номер приказа</th>
+                <th>Договор</th>
+                <th>Дата приказа</th>
+                <th>Дата увольнения</th>
+                <th>Номер приказа</th>
+                <th>Доп. информация</th>
+                -->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employer : ${employers}">
+                <td th:text="${employer.id}"></td>
+                <td><a th:href="@{employer-update/{id}(id=${employer.id})}">Править</a></td>
+                <td><a th:href="@{employer-delete/{id}(id=${employer.id})}">Удалить</a></td>
+                <td th:text="${employer.lastName}"></td>
+                <td th:text="${employer.firstName}"></td>
+                <td th:text="${employer.parentName}"></td>
+                <td th:text="${employer.contract.isCurrent}"></td>
+                <td th:text="${employer.birthdate}"></td>
+
+                <!--
+                <td th:text="${employer.sex}"></td>
+                <td th:text="${employer.profession}"></td>
+                <td th:text="${employer.fullYears}"></td>
+                <td th:text="${employer.personalDocs.passport}"></td>
+                <td th:text="${employer.personalDocs.passportIssuer}"></td>
+                <td th:text="${employer.personalDocs.passportIssueDate}"></td>
+                <td th:text="${employer.personalDocs.inn}"></td>
+                <td th:text="${employer.personalDocs.snils}"></td>
+                <td th:text="${employer.home.region}"></td>
+                <td th:text="${employer.home.county}"></td>
+                <td th:text="${employer.home.city}"></td>
+                <td th:text="${employer.home.street}"></td>
+                <td th:text="${employer.home.houseNumber}"></td>
+                <td th:text="${employer.home.apartmentNumber}"></td>
+                <td th:text="${employer.phoneNumber}"></td>
+                <td th:text="${employer.contract.employedDate}"></td>
+                <td th:text="${employer.contract.employedOrder}"></td>
+                <td th:text="${employer.contract.employedContractNumber}"></td>
+                <td th:text="${employer.contract.employedContractDate}"></td>
+                <td th:text="${employer.contract.firedDate}"></td>
+                <td th:text="${employer.contract.firedOrder}"></td>
+                <td th:text="${employer.contract.additionalInfo}"></td>
+                -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/employer-create">Новый сотрудник</a></p>
+</div>
+</body>
+</html>

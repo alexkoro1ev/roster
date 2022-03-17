@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Править данные сотрудника</title>
+</head>
+<body>
+<form action="#" th:action="@{/employer-update}" th:object="${employer}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="lastName">Фамилия</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Фамилия">
+    <label for="firstName">Имя</label>
+    <input readonly type="text" th:field="*{firstName}" id="firstName" placeholder="Имя">
+    <label for="parentName">Отчество</label>
+    <input type="text" th:field="*{lastName}" id="parentName" placeholder="Отчество">
+    <br/>
+
+    <!-- Чек на работоспособность -->
+    <label for="isCurrent">Работает</label>
+    <p><select type="text" th:field="*{contract.isCurrent}" id="isCurrent">
+        <option th:value="1">да</option>
+        <option th:value="0">нет</option>
+    </select></p>
+
+    <!-- Чек даты
+    <label for="birthdate">Дата рождения</label>
+    <input type="datetime-local" th:field="*{birthdate}" id="birthdate" placeholder="Last Name">
+    -->
+    <br/>
+    <input type="submit" value="Update User">
+</form>
+
+</body>
+</html>

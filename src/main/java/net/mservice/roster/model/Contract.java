@@ -4,14 +4,18 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 @Data
 @Embeddable
+@Getter
+@Setter
 public class Contract {
 
-    private boolean isCurrent;
+    private Boolean isCurrent;
 
     @Temporal(TemporalType.DATE)
     private Date employedDate;
